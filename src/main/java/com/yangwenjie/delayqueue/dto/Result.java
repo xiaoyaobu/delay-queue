@@ -6,23 +6,23 @@ import java.util.Map;
 /**
  * Create By IntelliJ IDEA
  * 返回数据定义
+ *
  * @author Yang WenJie
  * @date 2017/8/28 10:32
  */
-public class Result extends HashMap<String,Object> {
+public class Result extends HashMap<String, Object> {
     /**
      * 成功编码
      */
     private static final int SUCCESS_CODE = 0;
     /**
      * 失败编码
-     *
      */
     private static final int ERROR_CODE = 1;
 
     public Result() {
         put("code", SUCCESS_CODE);
-        put("msg","操作成功！");
+        put("msg", "操作成功！");
     }
 
     public static Result error() {

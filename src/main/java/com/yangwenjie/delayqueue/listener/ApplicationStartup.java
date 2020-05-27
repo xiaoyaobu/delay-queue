@@ -16,9 +16,9 @@ public class ApplicationStartup implements ApplicationListener<ContextRefreshedE
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        ExecutorService executorService = Executors.newFixedThreadPool((int)DelayQueue.DELAY_BUCKET_NUM);
+        ExecutorService executorService = Executors.newFixedThreadPool((int) DelayQueue.DELAY_BUCKET_NUM);
         for (int i = 0; i < DelayQueue.DELAY_BUCKET_NUM; i++) {
-            executorService.execute(new DelayBucketHandler(DelayQueue.DELAY_BUCKET_KEY_PREFIX+i));
+            executorService.execute(new DelayBucketHandler(DelayQueue.DELAY_BUCKET_KEY_PREFIX + i));
         }
     }
 }
